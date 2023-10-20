@@ -1,0 +1,23 @@
+{
+  "name": "@engram-compose-template/backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "dev:build": "tsc --watch --preserveWatchOutput",
+    "dev:start": "node --watch dist/index.js",
+    "dev": "concurrently \"npm run dev:build\" \"npm run dev:start\" -c \"bgGreen,bgMagenta\" --names \"build,start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@engram-compose-template/utils": "^1.0.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.20"
+  }
+}

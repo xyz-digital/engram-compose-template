@@ -1,0 +1,35 @@
+{
+  "name": "engram-compose-template",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "packages/utils",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "start": "npm run start --workspaces --if-present",
+    "dev:frontend": "npm run dev --workspace=@engram-compose-template/frontend --if-present",
+    "dev:backend": "npm run dev --workspace=@engram-compose-template/backend --if-present",
+    "dev:utils": "npm run dev --workspace=@engram-compose-template/utils --if-present",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:utils\" -c \"bgCyan,bgMagenta,bgBlue\" --names \"FE,BE,UT\""
+  },
+  "keywords": [],
+  "author": "Emily Waters",
+  "license": "MIT",
+  "dependencies": {
+    "@engram-compose-template/backend": "^1.0.0",
+    "@engram-compose-template/frontend": "^1.0.0",
+    "@engram-compose-template/utils": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.3.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.7"
+  }
+}

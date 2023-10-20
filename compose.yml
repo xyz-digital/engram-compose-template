@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - ${PORT:-80}:80
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
